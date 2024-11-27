@@ -25,9 +25,7 @@ class Bookstore:
 
 @dataclass
 class BookBookstore:
-    """
-    связи многие-ко-многим
-    """
+    """Связи многие-ко-многим"""
     book_id:  int
     store_id: int
 
