@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import List, Dict
 from itertools import groupby
+from pprint import pprint
 
 
 @dataclass(order=True)
@@ -88,7 +89,7 @@ def main():
             for book, store in one_to_many
             if book.first_letter == 'А'
         ]
-    print(res_1)
+    pprint(res_1)
 
     print('\nЗадание В2')
 
@@ -102,11 +103,11 @@ def main():
         ],
         key=lambda x: x[1]
     )
-    print(res_2)
+    pprint(res_2, width=60)
 
     print('\nЗадание В3')
 
-    print([(book.title, book.price, store.name) for book, store in sorted(many_to_many, key=lambda x: x[0].title)])
+    pprint([(book.title, book.price, store.name) for book, store in sorted(many_to_many, key=lambda x: x[0].title)])
 
 
 if __name__ == '__main__':
